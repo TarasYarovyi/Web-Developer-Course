@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="new_article.php" method="post">
+      <p>
+        <label for="title">Tytuł artykułu:</label>
+        <input type="text" id="title" name="title" />
+      </p>
+      <p>
+        <label for="content">Treść artykułu:</label>
+        <p><textarea name="content" id="content" cols="50" rows="4"></textarea></p>
+      </p>
+      <p>
+        <label for="publication-date">Data publikacji:</label>
+        <input type="datetime-local" id="publication-date" name="publication-date" />
+      </p>
+      <p>Typ publikacji:
+        <input type="radio" id="news" value="news" name="type" />
+        <label for="news">News</label>
+        <input type="radio" id="article" value="article" name="type" />
+        <label for="article">Artykuł</label>
+        <input type="radio" id="review" value="review" name="type" />
+        <label for="review">Recensja</label>
+      </p>
+      <p>Tagi:
+          <input type="checkbox" id="adventure" value="adventure" name="tag" />
+          <label for="adventure">Podróże</label>
+          <input type="checkbox" id="lifestyle" value="lifestyle" name="tag" />
+          <label for="lifestyle">Lifestyle</label>
+          <input type="checkbox" id="hobby" value="hobby" name="tag" />
+          <label for="hobby">Hobby</label>
+          <input type="checkbox" id="work" value="work" name="tag" />
+          <label for="work">Praca</label>
+      </p>
+      <p>
+        <label for="category">Kategoria:</label>
+        <select name="category" id="category">
+
+            <option value="" disabled selected>Wybierz kategorię</option>
+            <option value="Category1">Kategoria1</option>
+            <option value="Category2">Kategoria2</option>
+        </select>
+      </p>
+      <p>
+          <button type="reset">Resetuj</button>
+        <button type="submit">Wyślij</button>
+      </p>
+    </form>
+  </body>
+</html>
