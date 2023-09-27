@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      [data-color] {
+        background-color: red;
+        border: 2px dotted darkred;
+        font-weight: bold;
+      }
+
+      [data-color="blue"] {
+        background-color: lightblue;
+        border: 2px dotted darkblue;
+      }
+
+      [data-green="light" i] {
+        background-color: lightgreen;
+      }
+
+      [data-green="dark" i] {
+        background-color: green;
+      }
+
+      [class*="str"] {
+        background-color: orange;
+      }
+
+      [class~="small-text"] {
+        font-size: 10px;
+      }
+
+      [class^="small-text"] {
+        border: 15px solid darkorange;
+      }
+
+      [class$="box"] {
+        padding: 5px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-color>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam nemo
+      reprehenderit vel, officiis ex doloribus commodi nam hic fuga aperiam ut
+      sunt eveniet eos enim ea pariatur aliquam asperiores alias.
+    </div>
+    <div class="small-text str box">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam nemo
+      reprehenderit vel, officiis ex doloribus commodi nam hic fuga aperiam ut
+      sunt eveniet eos enim ea pariatur aliquam asperiores alias.
+    </div>
+    <div data-green="Light">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam nemo
+      reprehenderit vel, officiis ex doloribus commodi nam hic fuga aperiam ut
+      sunt eveniet eos enim ea pariatur aliquam asperiores alias.
+    </div>
+    <p data-color="blue">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
+      distinctio.
+    </p>
+  </body>
+</html>
