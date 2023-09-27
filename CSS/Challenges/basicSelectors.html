@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      article {
+        border: 1px solid black;
+      }
+      .comment {
+        color: blue;
+      }
+      #best-comment.comment {
+        background: yellow;
+      }
+      header > p {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <header>
+          <h2>Artykuł blogu</h2>
+          <p>Autor: <a href="#">Jan Kowalski</a></p>
+        </header>
+        <p class="article-content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
+          eos?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis
+          cumque soluta qui, commodi voluptatem ipsum reiciendis itaque nesciunt
+          vel quibusdam explicabo fugiat eaque temporibus fuga velit vero,
+          deleniti ab expedita libero quia repudiandae nisi quo? Nesciunt harum
+          consectetur nisi, quaerat quo quisquam qui ut maxime recusandae, nemo
+          iure officia dolores, nulla vero accusantium reiciendis repudiandae
+          voluptates natus fugiat? Blanditiis eos voluptatibus et nostrum ab
+          magnam iure dignissimos quo nihil nam itaque iusto pariatur ex, totam
+          vero vitae praesentium ad, nemo alias quaerat saepe dolores ipsam
+          libero illo? Dolores cumque officia ad id mollitia recusandae numquam
+          earum, repellendus ex cupiditate voluptatem.
+        </p>
+
+        <section class="comments">
+          <article class="comment">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio,
+              blanditiis?
+            </p>
+          </article>
+          <article id="best-comment" class="comment">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio,
+              blanditiis?
+            </p>
+          </article>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
