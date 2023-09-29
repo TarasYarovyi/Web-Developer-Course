@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p::first-letter {
+        font-size: 20px;
+        color: darkgray;
+      }
+      p::first-line {
+        font-weight: bold;
+      }
+      p::selection {
+        color: red;
+      }
+      ul {
+        list-style-type: none;
+      }
+      li::before {
+        content: "⇒";
+      }
+      .best::before {
+        content: "🍕";
+      }
+      li::after {
+        content: "!";
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolorlo Lorem ipsum dolor sit, amet consectetur adipisicing
+      elit. Velit alias nam laboriosam, in culpa ea soluta omnis maiores,
+      tempora voluptas reiciendis placeat ipsum dolor? Possimus sequi eius
+      accusamus doloremque ipsam molestiae placeat doloribus ipsa harum in,
+      laudantium laboriosam est rerum ipsum odit accusantium dolor aliquam unde
+      libero. Id architecto quidem, esse ducimus iusto ipsam veniam sit fugit
+      dolor hic aut qui a nisi unde numquam dolores. Ea porro sit dolorem magni,
+      pariatur veritatis similique doloremque, cumque quam unde natus distinctio
+      rerum autem molestiae sapiente fugiat repellat inventore optio, delectus
+      praesentium magnam saepe vel! Possimus, nam. Magni quibusdam nostrum
+      quaerat recusandae, perspiciatis doloribus temporibus aut voluptatum cum
+      ex! In delectus ab fuga praesentium velit, eaque assumenda molestiae
+      quidem voluptates alias sint? Enim corporis facere nostrum reprehenderit
+      hic vitae quae quod qui? Enim praesentium voluptatibus voluptatum expedita
+      eveniet corrupti fugit minus necessitatibus explicabo modi doloremque
+      officia, qui sed obcaecati id corporis perspiciatis neque nostrum animi
+      illum repudiandae odit nesciunt iste. Non, expedita! Odit quas cupiditate
+      voluptatem vero animi assumenda, autem repudiandae! Commodi eveniet vel,
+      cumque iure quam sint eligendi cum quibusdam similique, ipsa recusandae
+      autem et sequi deleniti ipsam error esse soluta eius eos id ea nihil
+      dolore ratione. Placeat, dolor consectetur! sit amet.
+    </p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <ul>
+      <li>Jeden</li>
+      <li class="best">Dwa</li>
+      <li>Trzy</li>
+    </ul>
+  </body>
+</html>
