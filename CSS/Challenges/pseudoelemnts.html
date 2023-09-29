@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ::selection {
+        background: orange;
+      }
+      article::first-letter {
+        font-weight: bold;
+      }
+      article::first-line {
+        text-decoration: underline;
+      }
+      article::before {
+        content: "@";
+        border: 2px dotted red;
+      }
+      article:last-child::after {
+        content: "HOT";
+        font-weight: bold;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <article>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sapiente
+        earum officiis quidem beatae maiores repellat voluptas quasi fugit vitae
+        cupiditate, perferendis, consequatur a tenetur? Cumque nihil accusantium
+        aspernatur ullam?
+      </article>
+      <article>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sapiente
+        earum officiis quidem beatae maiores repellat voluptas quasi fugit vitae
+        cupiditate, perferendis, consequatur a tenetur? Cumque nihil accusantium
+        aspernatur ullam?
+      </article>
+      <article>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sapiente
+        earum officiis quidem beatae maiores repellat voluptas quasi fugit vitae
+        cupiditate, perferendis, consequatur a tenetur? Cumque nihil accusantium
+        aspernatur ullam?
+      </article>
+      <article>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sapiente
+        earum officiis quidem beatae maiores repellat voluptas quasi fugit vitae
+        cupiditate, perferendis, consequatur a tenetur? Cumque nihil accusantium
+        aspernatur ullam?
+      </article>
+      <article>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sapiente
+        earum officiis quidem beatae maiores repellat voluptas quasi fugit vitae
+        cupiditate, perferendis, consequatur a tenetur? Cumque nihil accusantium
+        aspernatur ullam?
+      </article>
+      <article>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sapiente
+        earum officiis quidem beatae maiores repellat voluptas quasi fugit vitae
+        cupiditate, perferendis, consequatur a tenetur? Cumque nihil accusantium
+        aspernatur ullam?
+      </article>
+    </div>
+  </body>
+</html>
