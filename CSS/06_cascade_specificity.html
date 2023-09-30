@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 0,0,1 */
+      body {
+        background-color: rgb(41, 41, 41);
+      }
+      /* 0,0,1 */
+      body :not() {
+        color: antiquewhite;
+      }
+      /* 1,0,0 */
+      #head-element {
+        color: blue;
+      }
+      /* 1,0,1 */
+      article #head-element {
+        color: rgb(255, 183, 0);
+      }
+      /* 0,1,1 */
+      h1.heading {
+        color: yellow;
+      }
+      /* 0,0,1 */
+      h1 {
+        color: lightblue;
+        text-decoration: underline;
+      }
+      /* 0,0,2 */
+      article h1 {
+        color: red;
+      }
+      /* 0,1,1 */
+      h1.heading {
+        text-decoration: line-through;
+      }
+      /* 0,1,1 */
+      h1[class] {
+        text-decoration: underline;
+      }
+      /* 0,0,0 */
+      * {
+        color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <h1 id="head-element" class="heading">Nagłówek</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <section>
+        <article>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+      </section>
+    </article>
+  </body>
+</html>
