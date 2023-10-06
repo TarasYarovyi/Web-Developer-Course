@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #333;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-image: radial-gradient(
+          circle,
+          rgb(75, 76, 82) 0%,
+          rgb(25, 25, 25) 93%
+        );
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .navbar-brand .logo {
+        height: 50px;
+      }
+      .navbar-links {
+        display: flex;
+        gap: 20px;
+      }
+      .navbar a {
+        color: #f28a0b;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s ease;
+      }
+      .navbar a:hover {
+        color: #ffb254;
+      }
+      .navbar-search input {
+        padding: 5px;
+        font-size: 10px;
+        border-radius: 3px;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a href="#">
+            <img
+              src="https://cdn.pixabay.com/photo/2016/08/25/07/30/orange-1618917_640.png"
+              alt="logo"
+              class="logo"
+            />
+          </a>
+        </div>
+        <div class="navbar-links">
+          <a href="#">Strona główna</a>
+          <a href="#">O nas</a>
+          <a href="#">Produkty</a>
+          <a href="#">Kontakt</a>
+        </div>
+        <div class="navbar-search">
+          <input type="text" placeholder="Szukaj..." />
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>
