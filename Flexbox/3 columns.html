@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+      .navbar div {
+        margin-top: 10px;
+      }
+      .navbar-brand .logo {
+        height: 50px;
+      }
+      .navbar-links {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .navbar a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+      }
+      .navbar-search input {
+        padding: 5px;
+        font-size: 1rem;
+        border-radius: 3px;
+        border: none;
+        background-color: lightblue;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+      .column {
+        min-width: 120px;
+        text-align: center;
+        background: silver;
+        border: 1px solid darkgrey;
+      }
+      .middle-column {
+        flex-grow: 1;
+        text-align: left;
+        padding: 0 20px;
+      }
+      .right-column {
+        display: none;
+      }
+      @media (min-width: 768px) {
+        .navbar {
+          flex-direction: row;
+        }
+        .navbar div {
+          margin-top: 0;
+        }
+        .navbar-links {
+          flex-direction: row;
+        }
+        .container {
+          flex-direction: row;
+        }
+      }
+      @media (min-width: 992px) {
+        .right-column {
+          display: block;
+        }
+      }
+      @media (min-width: 1200px) {
+        .column {
+          min-width: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a href="#">
+            <img
+              src="https://cdn.pixabay.com/photo/2016/08/25/07/30/orange-1618917_640.png"
+              alt="logo"
+              class="logo"
+            />
+          </a>
+        </div>
+        <div class="navbar-links">
+          <a href="#">Strona główna</a>
+          <a href="#">O nas</a>
+          <a href="#">Produkty</a>
+          <a href="#">Kontakt</a>
+        </div>
+        <div class="navbar-search">
+          <input type="text" placeholder="Szukaj..." />
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="column left-column">column1</div>
+      <div class="middle-column">
+        column2
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            dolores possimus recusandae tempora labore aliquam mollitia, ipsam
+            et quos praesentium quibusdam saepe nostrum ipsa quidem molestiae
+            architecto, harum a sapiente pariatur delectus alias! Dolor, magni
+            doloribus. Porro illum voluptatum impedit tenetur adipisci possimus
+            corrupti iusto quae, odio quas laboriosam dicta magni tempora rerum,
+            neque earum distinctio et non error ipsa id perferendis consequatur!
+            Fugiat voluptatem omnis quaerat, ipsa hic maiores modi, quasi
+            asperiores delectus consectetur, ratione repellendus ipsam explicabo
+            corporis libero assumenda sapiente impedit. Totam neque recusandae
+            perspiciatis ipsum tenetur, nostrum deserunt voluptate officia
+            distinctio dolores consequatur consequuntur quasi inventore!
+          </p>
+        </article>
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            dolores possimus recusandae tempora labore aliquam mollitia, ipsam
+            et quos praesentium quibusdam saepe nostrum ipsa quidem molestiae
+            architecto, harum a sapiente pariatur delectus alias! Dolor, magni
+            doloribus. Porro illum voluptatum impedit tenetur adipisci possimus
+            corrupti iusto quae, odio quas laboriosam dicta magni tempora rerum,
+            neque earum distinctio et non error ipsa id perferendis consequatur!
+            Fugiat voluptatem omnis quaerat, ipsa hic maiores modi, quasi
+            asperiores delectus consectetur, ratione repellendus ipsam explicabo
+            corporis libero assumenda sapiente impedit. Totam neque recusandae
+            perspiciatis ipsum tenetur, nostrum deserunt voluptate officia
+            distinctio dolores consequatur consequuntur quasi inventore!
+          </p>
+        </article>
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            dolores possimus recusandae tempora labore aliquam mollitia, ipsam
+            et quos praesentium quibusdam saepe nostrum ipsa quidem molestiae
+            architecto, harum a sapiente pariatur delectus alias! Dolor, magni
+            doloribus. Porro illum voluptatum impedit tenetur adipisci possimus
+            corrupti iusto quae, odio quas laboriosam dicta magni tempora rerum,
+            neque earum distinctio et non error ipsa id perferendis consequatur!
+            Fugiat voluptatem omnis quaerat, ipsa hic maiores modi, quasi
+            asperiores delectus consectetur, ratione repellendus ipsam explicabo
+            corporis libero assumenda sapiente impedit. Totam neque recusandae
+            perspiciatis ipsum tenetur, nostrum deserunt voluptate officia
+            distinctio dolores consequatur consequuntur quasi inventore!
+          </p>
+        </article>
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            dolores possimus recusandae tempora labore aliquam mollitia, ipsam
+            et quos praesentium quibusdam saepe nostrum ipsa quidem molestiae
+            architecto, harum a sapiente pariatur delectus alias! Dolor, magni
+            doloribus. Porro illum voluptatum impedit tenetur adipisci possimus
+            corrupti iusto quae, odio quas laboriosam dicta magni tempora rerum,
+            neque earum distinctio et non error ipsa id perferendis consequatur!
+            Fugiat voluptatem omnis quaerat, ipsa hic maiores modi, quasi
+            asperiores delectus consectetur, ratione repellendus ipsam explicabo
+            corporis libero assumenda sapiente impedit. Totam neque recusandae
+            perspiciatis ipsum tenetur, nostrum deserunt voluptate officia
+            distinctio dolores consequatur consequuntur quasi inventore!
+          </p>
+        </article>
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            dolores possimus recusandae tempora labore aliquam mollitia, ipsam
+            et quos praesentium quibusdam saepe nostrum ipsa quidem molestiae
+            architecto, harum a sapiente pariatur delectus alias! Dolor, magni
+            doloribus. Porro illum voluptatum impedit tenetur adipisci possimus
+            corrupti iusto quae, odio quas laboriosam dicta magni tempora rerum,
+            neque earum distinctio et non error ipsa id perferendis consequatur!
+            Fugiat voluptatem omnis quaerat, ipsa hic maiores modi, quasi
+            asperiores delectus consectetur, ratione repellendus ipsam explicabo
+            corporis libero assumenda sapiente impedit. Totam neque recusandae
+            perspiciatis ipsum tenetur, nostrum deserunt voluptate officia
+            distinctio dolores consequatur consequuntur quasi inventore!
+          </p>
+        </article>
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            dolores possimus recusandae tempora labore aliquam mollitia, ipsam
+            et quos praesentium quibusdam saepe nostrum ipsa quidem molestiae
+            architecto, harum a sapiente pariatur delectus alias! Dolor, magni
+            doloribus. Porro illum voluptatum impedit tenetur adipisci possimus
+            corrupti iusto quae, odio quas laboriosam dicta magni tempora rerum,
+            neque earum distinctio et non error ipsa id perferendis consequatur!
+            Fugiat voluptatem omnis quaerat, ipsa hic maiores modi, quasi
+            asperiores delectus consectetur, ratione repellendus ipsam explicabo
+            corporis libero assumenda sapiente impedit. Totam neque recusandae
+            perspiciatis ipsum tenetur, nostrum deserunt voluptate officia
+            distinctio dolores consequatur consequuntur quasi inventore!
+          </p>
+        </article>
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            dolores possimus recusandae tempora labore aliquam mollitia, ipsam
+            et quos praesentium quibusdam saepe nostrum ipsa quidem molestiae
+            architecto, harum a sapiente pariatur delectus alias! Dolor, magni
+            doloribus. Porro illum voluptatum impedit tenetur adipisci possimus
+            corrupti iusto quae, odio quas laboriosam dicta magni tempora rerum,
+            neque earum distinctio et non error ipsa id perferendis consequatur!
+            Fugiat voluptatem omnis quaerat, ipsa hic maiores modi, quasi
+            asperiores delectus consectetur, ratione repellendus ipsam explicabo
+            corporis libero assumenda sapiente impedit. Totam neque recusandae
+            perspiciatis ipsum tenetur, nostrum deserunt voluptate officia
+            distinctio dolores consequatur consequuntur quasi inventore!
+          </p>
+        </article>
+      </div>
+      <div class="column right-column">column3</div>
+    </div>
+  </body>
+</html>
