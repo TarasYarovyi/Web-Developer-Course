@@ -1,0 +1,105 @@
+
+:root{
+    box-sizing: border-box;
+    color: white;
+}
+*, ::before, ::after{
+box-sizing: inherit;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("https://cdn.pixabay.com/photo/2017/04/05/01/20/wood-2203740_1280.jpg");
+}
+#header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #333;
+    padding: 0 5px;
+    font-family: "Cookie",cursive;
+    display: flex;
+    justify-content: space-between;
+}
+#header nav{
+    align-items: center;
+    height: 90%;
+}
+#logo img{
+    flex: 0 0 20%;
+    margin: 20px;
+    width: 60px;
+}
+.menu{
+    flex: 0 0 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.menu ul li{
+    display: inline-block;
+    padding-right: 30px;
+}
+
+.menu ul li a{
+text-decoration: none;
+color: white;
+font-size: 1.4rem;
+transition: color 0.5s ease;
+}
+.menu ul li a:hover{
+ color: #ffd77f;   
+  transition: color 0.5s ease;
+}
+.contact-info{
+    flex: 0 0 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.slider-box{
+    height: 200px;
+    background-color: #333;
+    display: flex;
+}
+.slider-half-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    font-family: cursive, Geneva, Tahoma, sans-serif;
+    padding: 20px;
+}
+.slider-half-item .button{
+    text-transform: uppercase;
+    padding: 8px;
+    text-decoration: none;
+    margin: 2px;
+    font-size: 0.7rem;  
+}
+.button-section{
+    margin-top: 20px;
+}
+.order-button{
+color: rgb(248, 156, 113);
+border: 2px solid rgb(248, 156, 113);
+background-color: rgba(248, 156, 113, 0.3);
+
+}
+
+.book-button{
+color: #ffd77f;
+border: 2px solid #ffd77f;
+background-color: rgba(255, 214, 127, 0.3);
+}
+.order-button:hover, .book-button:hover{
+    background-color: #333;
+}
+.pizza-img{
+    background-image: url("https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg");
+    background-size: cover;
+    background-position: center center;
+}
