@@ -1,4 +1,6 @@
-
+html{
+    scroll-behavior: smooth;
+}
 :root{
     box-sizing: border-box;
     color: white;
@@ -13,6 +15,7 @@ body{
 }
 #header{
     position: sticky;
+    z-index: 1;
     top: 0;
     left: 0;
     background: #333;
@@ -71,7 +74,7 @@ transition: color 0.5s ease;
     width: 50%;
     height: 100%;
     font-family: cursive, Geneva, Tahoma, sans-serif;
-    padding: 20px;
+    padding: 2%;
 }
 .slider-half-item .button{
     text-transform: uppercase;
@@ -102,4 +105,71 @@ background-color: rgba(255, 214, 127, 0.3);
     background-image: url("https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg");
     background-size: cover;
     background-position: center center;
+}
+.advantages-box{
+    margin-top: 1%;
+    display: flex;
+    margin: 1%;
+    background-color: transparent;
+    justify-content: space-between;
+    gap: 5px;
+}
+.advantages-box div{
+    flex: 1 0 30%;
+}
+
+.column-advantage{
+    position: relative;
+    height: 20vmax;
+    /* width: 30vmin; */
+    border: 5px solid #333;
+    background-size: cover;
+    background-position: center center;
+
+}
+.best-ingredients{
+    background-image: url("https://cdn.pixabay.com/photo/2016/05/24/13/29/olive-oil-1412361__340.jpg");
+}
+.original-recipe{
+    background-image: url("https://cdn.pixabay.com/photo/2016/05/06/12/15/cook-1375788_960_720.jpg");
+}
+.fast-delivery{
+    background-image: url("https://cdn.pixabay.com/photo/2020/02/10/18/31/motor-scooter-4837310_960_720.jpg");
+}
+.bottom-right{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-family: cursive, Geneva, Tahoma, sans-serif;
+}
+.kithen-menu{
+    background-color: #333;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    font-family: cursive, Verdana, Geneva, Tahoma, sans-serif;
+    padding: 2%;
+    margin-top: 1%;
+
+}
+.menu-one-forth{
+    flex-basis: 25%;
+    
+    text-align-last: center;
+    font-size: 0.9rem;
+    padding: 1%;
+
+}
+.menu-one-forth img{
+    width: 100%;
+}
+.page-footer{
+    width: 100%;
+    background-color: #333;
+    font-family: "Cookie",cursive, Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1%;
 }
