@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function createUser(name, contact) {
+        const user = {
+          name: name,
+        };
+        if (typeof contact === "string") {
+          user.email = contact;
+        } else if (typeof contact === "number") {
+          user.tel = contact;
+        }
+        return user;
+      }
+      const user1 = createUser("Ola", "ola@example.com");
+      const user2 = createUser("Kasia", 782256535);
+      console.log(user1);
+      console.log(user2);
+    </script>
+  </body>
+</html>
