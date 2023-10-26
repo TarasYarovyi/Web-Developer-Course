@@ -1,6 +1,8 @@
 function createUser(name, contact) {
   const user = {
     name: name,
+    email: null,
+    tel: null,
   };
   if (typeof contact === "string") {
     user.email = contact;
