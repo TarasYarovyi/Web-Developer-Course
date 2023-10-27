@@ -18,13 +18,16 @@ const school = {
     } else console.log("Szkołą neima studentów");
   },
   showStudentsByName: function (name) {
-    for (let i = 0; i < this.students.length; i++) {
-      const element = this.students[i];
-      if (element.name === name) {
-        console.log(`${element.name} ${element.surname}`);
+    if (this.students.length) {
+      for (let i = 0; i < this.students.length; i++) {
+        const element = this.students[i];
+        if (element.name === name) {
+          console.log(`${element.name} ${element.surname}`);
+        }
       }
-    }
+    } else console.log("Szkołą neima studentów");
   },
+
   getNumStudents: function () {
     console.log("Ilość studentów w Szkole: ", this.students.length);
   },
