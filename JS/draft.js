@@ -1,48 +1,30 @@
-const school = {
-  name: "im.Banacha",
-  city: "Wro",
-  students: [],
-  addStudent: function (name, surname) {
-    const student = {
-      name: name,
-      surname: surname,
-    };
-    this.students[this.students.length] = student;
+const newspaper = {
+  articles: [],
+  addArticle: function (title, content) {
+    this.articles.push({
+      title: title,
+      content: content,
+    });
   },
-  showStudents: function () {
-    if (this.students.length) {
-      for (let i = 0; i < this.students.length; i++) {
-        const element = this.students[i];
-        console.log(`${element.name} ${element.surname}`);
+  removeArticle: function (title) {
+    for (let i = 0; i < this.articles.length; i++) {
+      const element = this.articles[i];
+      if (element.title === title) {
+        this.articles.splice(i, 1);
       }
-    } else console.log("Szkołą neima studentów");
+    }
   },
-  showStudentsByName: function (name) {
-    if (this.students.length) {
-      for (let i = 0; i < this.students.length; i++) {
-        const element = this.students[i];
-        if (element.name === name) {
-          console.log(`${element.name} ${element.surname}`);
-        }
-      }
-    } else console.log("Szkołą neima studentów");
-  },
-
-  getNumStudents: function () {
-    console.log("Ilość studentów w Szkole: ", this.students.length);
-  },
-  resetStudents: function () {
-    this.students = [];
+  showArticles: function () {
+    for (let i = 0; i < this.articles.length; i++) {
+      const element = this.articles[i];
+      console.log(element.title);
+      console.log(element.content);
+    }
   },
 };
 
-school.addStudent("Piotr", "Ragan");
-school.addStudent("Piotr", "Kubczak");
-school.addStudent("Piotr", "Kordysz");
-school.addStudent("Przemek", "Stolarski");
-school.addStudent("Jarek", "Mucha");
-school.showStudents();
-school.getNumStudents();
-school.showStudentsByName("Piotr");
-school.resetStudents();
-school.getNumStudents();
+newspaper.addArticle("Tittle1", "Some content content content ");
+newspaper.addArticle("Tittle2", "Some content content content ");
+newspaper.addArticle("Tittle3", "Some content content content ");
+newspaper.removeArticle("Tittle2");
+newspaper.showArticles();
