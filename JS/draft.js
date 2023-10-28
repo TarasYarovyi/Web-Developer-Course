@@ -1,30 +1,7 @@
-const newspaper = {
-  articles: [],
-  addArticle: function (title, content) {
-    this.articles.push({
-      title: title,
-      content: content,
-    });
-  },
-  removeArticle: function (title) {
-    for (let i = 0; i < this.articles.length; i++) {
-      const element = this.articles[i];
-      if (element.title === title) {
-        this.articles.splice(i, 1);
-      }
-    }
-  },
-  showArticles: function () {
-    for (let i = 0; i < this.articles.length; i++) {
-      const element = this.articles[i];
-      console.log(element.title);
-      console.log(element.content);
-    }
-  },
-};
+const square = (a) => a ** 2;
+const multiply = (a, b) => a * b;
+const average = (a, b, c) => (a + b + c) / 3;
 
-newspaper.addArticle("Tittle1", "Some content content content ");
-newspaper.addArticle("Tittle2", "Some content content content ");
-newspaper.addArticle("Tittle3", "Some content content content ");
-newspaper.removeArticle("Tittle2");
-newspaper.showArticles();
+console.log(square(2));
+console.log(multiply(2, 3));
+console.log(average(2, 3, 4));
