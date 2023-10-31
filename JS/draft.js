@@ -1,17 +1,35 @@
-function Journal() {
-  this.adverts = [];
-  this.addAdvert = function (name) {
-    this.adverts.push({
-      page: this.adverts.length,
-      name: name,
-    });
-  };
-  this.printAdverts = function () {
-    this.adverts.forEach((el) => console.log(el));
-  };
-}
+const truck = {
+  _brand: null,
+  _model: null,
+  _topSpeed: 0,
+  set brand(brand) {
+    this._brand = brand;
+  },
+  get brand() {
+    return this._brand;
+  },
+  set model(model) {
+    this._model = model;
+  },
+  get model() {
+    return this._model;
+  },
+  set topSpeed(topSpeed) {
+    if (topSpeed <= 0) {
+      console.log("Speed to low");
+    } else {
+      this._topSpeed = topSpeed;
+    }
+  },
+  get topSpeed() {
+    return this._topSpeed;
+  },
+};
 
-const maxim = new Journal();
-maxim.addAdvert("Orlen");
-maxim.addAdvert("Lotos");
-maxim.addAdvert("BP");
+console.log(truck);
+truck.brand = "Volvo";
+truck.model = "VF40";
+truck.topSpeed = "80";
+console.log(truck.brand);
+console.log(truck.model);
+console.log(truck.topSpeed);
