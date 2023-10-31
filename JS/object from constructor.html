@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Journal() {
+        this.adverts = [];
+        this.addAdvert = function (name) {
+          this.adverts.push({
+            page: this.adverts.length,
+            name: name,
+          });
+        };
+        this.printAdverts = function () {
+          this.adverts.forEach((el) => console.log(el));
+        };
+      }
+
+      const maxim = new Journal();
+      maxim.addAdvert("Orlen");
+      maxim.addAdvert("Lotos");
+      maxim.addAdvert("BP");
+      maxim.printAdverts();
+    </script>
+  </body>
+</html>

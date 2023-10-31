@@ -1,7 +1,17 @@
-const square = (a) => a ** 2;
-const multiply = (a, b) => a * b;
-const average = (a, b, c) => (a + b + c) / 3;
+function Journal() {
+  this.adverts = [];
+  this.addAdvert = function (name) {
+    this.adverts.push({
+      page: this.adverts.length,
+      name: name,
+    });
+  };
+  this.printAdverts = function () {
+    this.adverts.forEach((el) => console.log(el));
+  };
+}
 
-console.log(square(2));
-console.log(multiply(2, 3));
-console.log(average(2, 3, 4));
+const maxim = new Journal();
+maxim.addAdvert("Orlen");
+maxim.addAdvert("Lotos");
+maxim.addAdvert("BP");
