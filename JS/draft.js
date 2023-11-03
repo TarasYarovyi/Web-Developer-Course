@@ -1,6 +1,11 @@
-function updateNumberInArray(arr, index, value) {
-  if (index >= 0 && index < arr.length) {
-    arr.splice(index, 1, value);
-  }
-  return arr;
+// Przykładowa tablica użytkowników z którą możesz
+// sprawdzić swoją funkcję
+let users = [
+  { name: "John", age: 25, favoriteColor: "blue" },
+  { name: "Jane", age: 30, favoriteColor: "red" },
+  { name: "Doe", age: 20, favoriteColor: "green" },
+];
+
+function extractNames(arr) {
+  return arr.map((el) => el.name);
 }
