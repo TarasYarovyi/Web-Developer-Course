@@ -1,8 +1,6 @@
-function squaredNumbers(arr) {
-  const newArr = [];
-  arr.forEach((el) => newArr.push(el ** 2));
-  return newArr;
+function prependNumbers(arr) {
+  for (let i = arr[0] - 1; i >= 0; i--) {
+    arr.unshift(i);
+  }
+  return arr;
 }
-
-const array = [1, 2, 3, 4, 5, 6, 7];
-console.log(squaredNumbers(array));
