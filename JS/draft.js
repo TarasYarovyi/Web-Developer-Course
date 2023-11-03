@@ -1,10 +1,6 @@
-function convertToWrapper(prim) {
-  if (typeof prim === "string") {
-    prim = new String(prim);
-  } else if (typeof prim === "number") {
-    prim = new Number(prim);
-  } else if (typeof prim === "boolean") {
-    prim = new Boolean(prim);
-  }
-  return prim;
+function extractDomain(email) {
+  const atIndex = email.indexOf("@");
+  if (atIndex === -1) return null;
+  const domain = email.substring(atIndex + 1);
+  return domain;
 }
