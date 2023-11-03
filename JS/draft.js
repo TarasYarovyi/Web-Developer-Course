@@ -1,6 +1,6 @@
-function prependNumbers(arr) {
-  for (let i = arr[0] - 1; i >= 0; i--) {
-    arr.unshift(i);
+function updateNumberInArray(arr, index, value) {
+  if (index >= 0 && index < arr.length) {
+    arr.splice(index, 1, value);
   }
   return arr;
 }
