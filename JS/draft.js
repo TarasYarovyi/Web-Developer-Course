@@ -9,6 +9,6 @@ let users = [
   { name: "Max", age: 30, favoriteColor: "brown" },
 ];
 
-function filterByAge(arr, age) {
-  return arr.filter((el) => el.age === age);
+function calculateTotalAge(arr) {
+  return arr.reduce((acc, el) => acc + el.age, 0);
 }
