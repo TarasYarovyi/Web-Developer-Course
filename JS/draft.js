@@ -1,6 +1,8 @@
-function addToEnd(arr, el) {
-  arr.push(el);
+function squaredNumbers(arr) {
+  const newArr = [];
+  arr.forEach((el) => newArr.push(el ** 2));
+  return newArr;
 }
-function removeFromEnd(arr) {
-  return arr.pop();
-}
+
+const array = [1, 2, 3, 4, 5, 6, 7];
+console.log(squaredNumbers(array));
