@@ -1,11 +1,11 @@
-function applyWithContext(fn, context, args) {
-  return fn.apply(context, args);
+function bindToContext(fn, context) {
+  // body...
+  return fn.bind(context);
 }
-const rectangle = {
-  length: 10,
-  width: 5,
-  calculateArea: function () {
-    return this.length * this.width;
+const animal = {
+  sound: "woof",
+  makeSound: function () {
+    return `This animal makes a ${this.sound} sound`;
   },
 };
-const area = applyWithContext(rectangle.calculateArea, rectangle);
+const boundMakeSound = bindToContext(animal.makeSound, animal);
