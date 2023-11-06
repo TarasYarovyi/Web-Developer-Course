@@ -1,14 +1,10 @@
-function addPropertyUsingDefineProperty(
-  obj,
-  propName,
-  propValue,
-  writable = false,
-  enumerable = false
-) {
-  Object.defineProperty(obj, propName, {
-    value: propValue,
-    writable: writable,
-    enumerable: enumerable,
-  });
-  return obj;
+function callWithContext(fn, context, ...args) {
+  return fn.call(context, ...args);
 }
+const circle = {
+  radius: 7,
+  calculateCircumference: function () {
+    return 2 * Math.PI * this.radius;
+  },
+};
+const circumference = callWithContext(circle.calculateCircumference, circle);
