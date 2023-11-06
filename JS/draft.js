@@ -1,10 +1,11 @@
-function callWithContext(fn, context, ...args) {
-  return fn.call(context, ...args);
+function applyWithContext(fn, context, args) {
+  return fn.apply(context, args);
 }
-const circle = {
-  radius: 7,
-  calculateCircumference: function () {
-    return 2 * Math.PI * this.radius;
+const rectangle = {
+  length: 10,
+  width: 5,
+  calculateArea: function () {
+    return this.length * this.width;
   },
 };
-const circumference = callWithContext(circle.calculateCircumference, circle);
+const area = applyWithContext(rectangle.calculateArea, rectangle);
