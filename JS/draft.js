@@ -1,16 +1,8 @@
-function createCounter() {
-  let value = 0;
-  return {
-    increment: function () {
-      value++;
-    },
-    getValue: function () {
-      return value;
-    },
+function add(x) {
+  return function (y) {
+    return x + y;
   };
 }
-const count = createCounter();
-count.increment();
-count.increment();
-count.increment();
-console.log(count.getValue());
+
+const result = add(5);
+console.log(result(10));
