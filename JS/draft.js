@@ -1,15 +1,16 @@
-const d = 99;
-
-function bar() {
-  const e = 12;
-
-  function test() {
-    const num = 45;
-    console.log(d, e, num);
-  }
-  return test;
+function createCounter() {
+  let value = 0;
+  return {
+    increment: function () {
+      value++;
+    },
+    getValue: function () {
+      return value;
+    },
+  };
 }
-
-const show = bar();
-console.log(show);
-show();
+const count = createCounter();
+count.increment();
+count.increment();
+count.increment();
+console.log(count.getValue());
