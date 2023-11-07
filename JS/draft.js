@@ -1,11 +1,15 @@
-function bindToContext(fn, context) {
-  // body...
-  return fn.bind(context);
+const d = 99;
+
+function bar() {
+  const e = 12;
+
+  function test() {
+    const num = 45;
+    console.log(d, e, num);
+  }
+  return test;
 }
-const animal = {
-  sound: "woof",
-  makeSound: function () {
-    return `This animal makes a ${this.sound} sound`;
-  },
-};
-const boundMakeSound = bindToContext(animal.makeSound, animal);
+
+const show = bar();
+console.log(show);
+show();
