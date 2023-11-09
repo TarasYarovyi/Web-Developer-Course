@@ -1,41 +1,23 @@
-const print = (a) => console.log(a);
-print("hello");
-const getObj = () => ({ text: "test" });
-console.log(getObj());
-
-// let Bar = () => {};
-// const bar1 = new Bar();// Bar is not a constructor
-let Bar = function () {};
-const bar1 = new Bar(); // ok
-
-const argTest = function () {
-  console.log(arguments);
-};
-argTest(1, 2, 3); //Arguments(3) [1, 2, 3, callee: ƒ, Symbol(Symbol.iterator): ƒ]
-
-// const arrowArgTest = () => {
-//   console.log(arguments);
-// };
-// arrowArgTest(1, 2, 3);//script.js:18 Uncaught ReferenceError: arguments is not defined
-
-const arrowArgTest = (...parametrs) => {
-  console.log(parametrs);
-};
-arrowArgTest(1, 2, 3); // [1, 2, 3] - ok
-
-const arrowThisTest = {
-  data: "Hello",
-  standardFunc: function () {
-    setTimeout(function () {
-      console.log(this);
-    }, 1000);
-  },
-  arrowFunc: function () {
-    setTimeout(() => {
-      console.log(this);
-    }, 2000);
+// destructurization
+const employee = {
+  name: "Ola",
+  id: 34,
+  employment: {
+    company: "example.com",
+    address: {
+      country: "PL",
+      city: "WRO",
+    },
   },
 };
 
-arrowThisTest.standardFunc(); //window :-(
-arrowThisTest.arrowFunc(); //ok :-)
+const {
+  name,
+  employment: { company },
+  employment: {
+    address: { city },
+  },
+} = employee;
+console.log(name);
+console.log(company);
+console.log(city);
