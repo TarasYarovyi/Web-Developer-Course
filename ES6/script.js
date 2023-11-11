@@ -2,40 +2,42 @@ class Car {
   constructor(brand, color) {
     this.brand = brand;
     this.color = color;
-  }
-  printData() {
-    console.log(this.brand);
-    console.log(this.color);
-  }
-}
-
-const bmw = new Car("BMW", "red");
-bmw.printData();
-
-let car2 = class {
-  constructor(brand, color) {
-    this.brand = brand;
-    this.color = color;
     this._age = 1;
+    //static property emulation
+    if (Car.countInstances === undefined) {
+      Car.countInstances = 0;
+    }
+    Car.countInstances++;
   }
   printData() {
     console.log(this.brand);
     console.log(this.color);
   }
+  //or an arrow, but with a difference
+  //   printData = () => {
+  //     console.log(this.brand);
+  //     console.log(this.color);
+  //   };
 
   set age(value) {
-    if (value > 0) return this._age;
+    if (value > 0) {
+      this._age = value;
+    } else {
+      console.log("Wrong age");
+    }
   }
   get age() {
     return this._age;
   }
   static getDefaultCar() {
-    return new car2();
+    return new Car();
   }
-};
+  static getNumbersOfInstances() {
+    return Car.countInstances;
+  }
+}
 
-const audi = new car2("Audi", "white");
-audi.printData();
-car2.age = 2;
-console.log(car2.age);
-console.log(car2.getDefaultCar());
+//static methods, "static" properties of classes
+console.log(Car.getNumbersOfInstances());
+const bmw = new Car();
+console.log(Car.getNumbersOfInstances());
