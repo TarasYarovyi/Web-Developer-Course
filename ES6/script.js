@@ -1,48 +1,44 @@
-class Animal {
-  constructor(name) {
-    if (typeof name === "string") {
-      this._name = name;
-    } else {
-      console.log("Wrong name");
-    }
-    if (Animal.count === undefined) Animal.count = 0;
-    this.id = Animal.count;
-    Animal.count++;
-  }
-  set name(value) {
-    if (typeof value === "string") {
-      this._name = value;
-    } else {
-      console.log("Wrong name");
-    }
-  }
-  get name() {
-    return this._name;
-  }
-  printData() {
-    const entries = Object.entries(this);
-    for (let [key, value] of entries) {
-      console.log(`key: ${key}; value:${value}`);
-    }
-  }
+function showData(data) {
+  console.log(data);
+  return data;
+}
+function showError(err) {
+  console.log(err);
+}
+function getJoke() {
+  return fetch("https://api.chucknorris.io/jokes/random")
+    .then((response) => response.json())
+    .then((data) => showData(data.value))
+    .catch((err) => showError(err));
 }
 
-const cat = new Animal("Barsik");
+function getJoke2() {
+  return new Promise((resolve, reject) => {
+    let req = new XMLHttpRequest();
+    req.open("GET", "https://api.chucknorris.io/jokes/random");
 
-console.log(cat.name);
-console.log(cat.id);
-
-const dog = new Animal();
-dog.name = "Leia";
-console.log(dog.name);
-console.log(dog.name);
-dog.printData();
-class Human extends Animal {
-  constructor(name, surname) {
-    super(name);
-    this.surname = surname;
-  }
+    req.onload = function () {
+      if (req.status === 200) {
+        resolve(JSON.parse(req.response).value);
+      } else {
+        reject(req.responseText);
+      }
+    };
+    req.onerror = function () {
+      reject(new Error("Network error"));
+    };
+    req.send();
+  });
 }
 
-let husband = new Human("Taras", "Yarovyi");
-husband.printData();
+async function que() {
+  try {
+    console.log(1);
+    await getJoke();
+    await getJoke2().then((result) => console.log("Joke2: ", result));
+    console.log(2);
+  } catch (err) {
+    console.log(err);
+  }
+}
+que();
