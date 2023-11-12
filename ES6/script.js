@@ -19,8 +19,30 @@ class Animal {
   get name() {
     return this._name;
   }
+  printData() {
+    const entries = Object.entries(this);
+    for (let [key, value] of entries) {
+      console.log(`key: ${key}; value:${value}`);
+    }
+  }
 }
 
 const cat = new Animal("Barsik");
-cat.name = 1;
+
 console.log(cat.name);
+console.log(cat.id);
+
+const dog = new Animal();
+dog.name = "Leia";
+console.log(dog.name);
+console.log(dog.name);
+dog.printData();
+class Human extends Animal {
+  constructor(name, surname) {
+    super(name);
+    this.surname = surname;
+  }
+}
+
+let husband = new Human("Taras", "Yarovyi");
+husband.printData();
