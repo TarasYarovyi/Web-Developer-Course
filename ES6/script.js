@@ -1,44 +1,52 @@
-function showData(data) {
-  console.log(data);
-  return data;
+function time1() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(3);
+      resolve();
+    }, 1000);
+  });
 }
-function showError(err) {
-  console.log(err);
+function time2() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(2);
+      resolve();
+    }, 2000);
+  });
 }
-function getJoke() {
-  return fetch("https://api.chucknorris.io/jokes/random")
-    .then((response) => response.json())
-    .then((data) => showData(data.value))
-    .catch((err) => showError(err));
-}
-
-function getJoke2() {
-  return new Promise((resolve, reject) => {
-    let req = new XMLHttpRequest();
-    req.open("GET", "https://api.chucknorris.io/jokes/random");
-
-    req.onload = function () {
-      if (req.status === 200) {
-        resolve(JSON.parse(req.response).value);
-      } else {
-        reject(req.responseText);
-      }
-    };
-    req.onerror = function () {
-      reject(new Error("Network error"));
-    };
-    req.send();
+function time3() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(1);
+      resolve();
+    }, 3000);
   });
 }
 
-async function que() {
-  try {
-    console.log(1);
-    await getJoke();
-    await getJoke2().then((result) => console.log("Joke2: ", result));
-    console.log(2);
-  } catch (err) {
-    console.log(err);
-  }
+async function order() {
+  time3().then(time2).then(time1);
 }
-que();
+order();
+
+async function test() {
+  await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("test1");
+      resolve();
+    }, 8000);
+  });
+  await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("test2");
+      resolve();
+    }, 7000);
+  });
+  await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("test3");
+      resolve();
+    }, 6000);
+  });
+}
+
+test();
