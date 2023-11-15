@@ -1,54 +1,22 @@
-//ArrayOf
-console.log(
-  Array.of(1, 2, 3, {}, [], function () {
-    return 1;
-  })
-);
+async function* generator() {
+  yield await Promise.resolve(1);
+  yield await Promise.resolve(2);
+  yield await Promise.resolve(3);
+  yield await Promise.resolve(4);
+}
 
-//arrayGrom
-console.log(Array.from("String"));
+let dataIter = generator();
+dataIter.next().then((v) => console.log(v.value)); //1
+dataIter.next().then((v) => console.log(v.value)); //2
+dataIter.next().then((v) => console.log(v.value)); //3
+dataIter.next().then((v) => console.log(v.value)); //4
 
-// array.from + function
-console.log(Array.from("string", (el) => el.toLocaleUpperCase()));
+//or
+async function iterateGenerator() {
+  let dataIter2 = generator();
+  for await (let value of dataIter2) {
+    console.log(value);
+  }
+}
 
-// array.from + function + this
-const obj = { value: 10 };
-console.log(
-  Array.from(
-    [1, 2, 3, 4, 5],
-    function (el) {
-      return el * this.value;
-    },
-    obj
-  )
-);
-
-//fill
-console.log([1, 2, 3, 4, 5].fill(0));
-
-//fill from
-console.log([1, 2, 3, 4, 5].fill(0, 2));
-
-//fill from to
-console.log([1, 2, 3, 4, 5].fill(0, 2, 4));
-
-//find
-console.log([1, 2, 3, 4, 5].find((v) => v > 3));
-
-//findIndex
-console.log([1, 2, 3, 4, 5].findIndex((v) => v > 3));
-
-//copyWithin
-console.log([1, 2, 3, 4, 5].copyWithin(1, 3));
-
-//copyWithin
-console.log([1, 2, 3, 4, 5].copyWithin(1, 3, 4));
-
-const arr = [1, [], {}, "string"];
-
-//arr.values
-for (const item of arr.values()) console.log(item);
-//arr.keys
-for (const item of arr.keys()) console.log(item);
-//arr.entries
-for (const item of arr.entries()) console.log(item);
+iterateGenerator();
