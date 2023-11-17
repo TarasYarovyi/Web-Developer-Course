@@ -1,47 +1,34 @@
-// function Car(name, color) {
-//   this.name = name;
-//   this.color = color;
-//   this.logInfo = function () {
-//     console.log(this.name, this.color);
-//   };
-// }
-// const nissan = new Car("Nissan", "Red");
-// nissan.logInfo();
-// nissan.tradeName = function () {
-//   console.log(this.color, this.name);
-// };
-// nissan.tradeName();
-//or
-
-class Car {
-  constructor(name, color) {
-    this.name = name;
-    this.color = color;
-  }
-  logInfo() {
-    console.log(this.name, this.color);
-  }
+function Car(name) {
+  this.name = name;
+  this.configuration = [];
 }
-const nissan = new Car("Nissan", "red");
-nissan.logInfo();
-nissan.tradeName = function () {
-  console.log(this.color, this.name);
+
+Car.prototype.addConfiguration = function (prop, value, price) {
+  this.configuration.push({ prop: prop, value: value, price: price });
 };
-nissan.tradeName();
 
-class Truck extends Car {
-  constructor(name, color, type) {
-    super(name, color);
-    this.type = type;
-  }
-  logType() {
-    console.log(this.type);
-  }
-  logInfo() {
-    super.logInfo();
-    this.logType();
-  }
+function Truck(name, color) {
+  Car.call(this, name);
+  this.color = color;
 }
 
-const man = new Truck("MAN", "Blue", "Standard");
-man.logInfo();
+Truck.prototype = Object.create(Car.prototype);
+//or
+Truck.prototype = new Car();
+// Truck.prototype.constructor = Truck;
+// console.log(Truck.prototype.constructor);
+
+Truck.prototype.caountTotalPrice = function () {
+  const totalPrice = this.configuration.reduce(
+    (acc, cur) => acc + cur.price,
+    0
+  );
+  console.log(totalPrice);
+};
+
+const daf = new Truck("DAF", "red");
+daf.addConfiguration("capacity", "High", 1500);
+daf.addConfiguration("floor", "low", 1500);
+daf.addConfiguration("transmision", "auto", 1500);
+console.log(daf);
+daf.caountTotalPrice();
