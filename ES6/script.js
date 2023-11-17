@@ -1,34 +1,22 @@
-function Car(name) {
+function Person(name, age) {
   this.name = name;
-  this.configuration = [];
+  this.age = age;
 }
-
-Car.prototype.addConfiguration = function (prop, value, price) {
-  this.configuration.push({ prop: prop, value: value, price: price });
+Person.prototype.introduce = function () {
+  return `Hello, my name is ${this.name} and I am ${this.age} years old`;
 };
 
-function Truck(name, color) {
-  Car.call(this, name);
-  this.color = color;
+function Employee(name, age, jobTitle) {
+  Person.call(this, name, age);
+  this.jobTitle = jobTitle;
 }
-
-Truck.prototype = Object.create(Car.prototype);
-//or
-Truck.prototype = new Car();
-// Truck.prototype.constructor = Truck;
-// console.log(Truck.prototype.constructor);
-
-Truck.prototype.caountTotalPrice = function () {
-  const totalPrice = this.configuration.reduce(
-    (acc, cur) => acc + cur.price,
-    0
-  );
-  console.log(totalPrice);
+Employee.prototype = new Person(); //or Object.create(Person.prototype)
+Employee.prototype.whatDoYouDo = function () {
+  return `I work as a ${this.jobTitle}`;
 };
 
-const daf = new Truck("DAF", "red");
-daf.addConfiguration("capacity", "High", 1500);
-daf.addConfiguration("floor", "low", 1500);
-daf.addConfiguration("transmision", "auto", 1500);
-console.log(daf);
-daf.caountTotalPrice();
+const person1 = new Person("Taras", 35);
+const employee1 = new Employee("Taras", 35, "Manager");
+
+console.log(person1.introduce());
+console.log(employee1.whatDoYouDo());
