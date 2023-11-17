@@ -1,25 +1,47 @@
-const obj = {
-  brand: "Nissan",
-  model: "Quashqai",
-  year: 2014,
-};
+// function Car(name, color) {
+//   this.name = name;
+//   this.color = color;
+//   this.logInfo = function () {
+//     console.log(this.name, this.color);
+//   };
+// }
+// const nissan = new Car("Nissan", "Red");
+// nissan.logInfo();
+// nissan.tradeName = function () {
+//   console.log(this.color, this.name);
+// };
+// nissan.tradeName();
+//or
 
-const handler = {
-  get(target, prop, receiver) {
-    if (typeof target[prop] !== "number") {
-      return target[prop] + "!";
-    } else return target[prop];
-  },
-  set(target, prop, value) {
-    if (typeof value === "number") {
-      console.log("Numbers can`t be added");
-    } else target[prop] = value;
-  },
+class Car {
+  constructor(name, color) {
+    this.name = name;
+    this.color = color;
+  }
+  logInfo() {
+    console.log(this.name, this.color);
+  }
+}
+const nissan = new Car("Nissan", "red");
+nissan.logInfo();
+nissan.tradeName = function () {
+  console.log(this.color, this.name);
 };
-const proxy1 = new Proxy(obj, handler);
-console.log(proxy1.brand);
-console.log(proxy1.year);
-console.log(typeof obj.year);
-proxy1.color = 1; //Numbers can`t be added"
-proxy1.color = "Red";
-console.log(proxy1.color);
+nissan.tradeName();
+
+class Truck extends Car {
+  constructor(name, color, type) {
+    super(name, color);
+    this.type = type;
+  }
+  logType() {
+    console.log(this.type);
+  }
+  logInfo() {
+    super.logInfo();
+    this.logType();
+  }
+}
+
+const man = new Truck("MAN", "Blue", "Standard");
+man.logInfo();
