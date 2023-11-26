@@ -1,27 +1,18 @@
-class AppConfig {
-  constructor() {
-    if (typeof AppConfig.instance === "object") {
-      return AppConfig.instance;
-    }
-
-    this.config = {};
-
-    AppConfig.instance = this;
-    return this;
+const Module = (function () {
+  let privData = 99;
+  function getPrivData() {
+    return privData;
   }
 
-  setConfig(key, value) {
-    this.config[key] = value;
+  function setPrivData(value) {
+    privData = value;
   }
 
-  getConfig(key) {
-    return this.config[key];
-  }
-
-  static getInstance() {
-    if (!this._instance) {
-      this._instance = new AppConfig();
-    }
-    return this._instance;
-  }
-}
+  return {
+    getPrivData: getPrivData,
+    setPrivData: setPrivData,
+  };
+})();
+Module.setPrivData(88);
+console.log(Module.getPrivData());
+console.log(Module.privDatadata);
