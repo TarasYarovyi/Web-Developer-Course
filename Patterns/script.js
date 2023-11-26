@@ -1,36 +1,44 @@
-class Animal {
-  constructor(name, sound) {
+class Book {
+  constructor(name, price) {
     this.name = name;
-    this.sound = sound;
+    this.price = price;
   }
-  makeSound() {
-    console.log(`${this.name} makes ${this.sound}`);
+}
+class Toy {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
   }
 }
 
-class Cat extends Animal {
-  constructor() {
-    super("Cat", "meow");
-  }
+function BookFactory() {
+  return new Book("Harry Potter", 20);
 }
-class Dog extends Animal {
-  constructor() {
-    super("Dog", "woof");
-  }
+function ToyFactory() {
+  return new Toy("Lego", 50);
 }
 
-class AnimalFactory {
-  static createAnimal(type) {
-    switch (type) {
-      case "cat":
-        return new Cat();
-        break;
-      case "dog":
-        return new Dog();
-        break;
-
-      default:
+const AbstractProductFactory = (function () {
+  let types = [];
+  return {
+    registerType: function (type, factory) {
+      let product = factory();
+      if (product.name && product.price) {
+        types[type] = factory;
+      }
+    },
+    getProduct: function (type) {
+      let productType = types[type];
+      if (productType) {
+        return productType();
+      } else {
         return null;
-    }
-  }
-}
+      }
+    },
+  };
+})();
+
+AbstractProductFactory.registerType("book", BookFactory);
+AbstractProductFactory.registerType("toy", ToyFactory);
+console.log(AbstractProductFactory.getProduct("book"));
+console.log(AbstractProductFactory.getProduct("toy"));
