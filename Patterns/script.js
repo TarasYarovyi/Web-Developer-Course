@@ -1,44 +1,21 @@
-class Book {
-  constructor(name, price) {
-    this.name = name;
-    this.price = price;
-  }
-}
-class Toy {
-  constructor(name, price) {
-    this.name = name;
-    this.price = price;
-  }
-}
+let person = function (name, age, city) {
+  let state = {
+    name: name,
+    age: age,
+    city: city,
+  };
+  return Object.assign(state, behavior(state));
+};
 
-function BookFactory() {
-  return new Book("Harry Potter", 20);
-}
-function ToyFactory() {
-  return new Toy("Lego", 50);
-}
-
-const AbstractProductFactory = (function () {
-  let types = [];
+function behavior(state) {
   return {
-    registerType: function (type, factory) {
-      let product = factory();
-      if (product.name && product.price) {
-        types[type] = factory;
-      }
-    },
-    getProduct: function (type) {
-      let productType = types[type];
-      if (productType) {
-        return productType();
-      } else {
-        return null;
-      }
+    introduce: function () {
+      console.log(
+        `${state.name} says: My name is ${state.name}, I'm ${state.age} old and I'm from ${state.city}`
+      );
     },
   };
-})();
+}
 
-AbstractProductFactory.registerType("book", BookFactory);
-AbstractProductFactory.registerType("toy", ToyFactory);
-console.log(AbstractProductFactory.getProduct("book"));
-console.log(AbstractProductFactory.getProduct("toy"));
+let person1 = person("Olek", 21, "Wro");
+person1.introduce();
