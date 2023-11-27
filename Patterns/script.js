@@ -1,42 +1,52 @@
-function Task(name, description, isDone) {
-  return {
-    name: name,
-    description: description,
-    isDone: isDone,
-  };
+class Computer {
+  constructor(processor, RAM, hardDrive, graphicsCard) {
+    this.processor = processor;
+    this.RAM = RAM;
+    this.hardDrive = hardDrive;
+    this.graphicsCard = graphicsCard;
+  }
+  describe() {
+    console.log(this.processor);
+    console.log(this.RAM);
+    console.log(this.hardDrive);
+    console.log(this.graphicsCard);
+  }
 }
 
-function TaskBuilder() {
-  let name, description, isDone;
-  return {
-    setName: function (newName) {
-      name = newName;
-      return this;
-    },
-    setDescription: function (newDescription) {
-      description = newDescription;
-      return this;
-    },
-    setIsDone: function (newIsDone) {
-      isDone = newIsDone;
-      return this;
-    },
-    build: function () {
-      return new Task(name, description, isDone);
-    },
-  };
-}
+class ComputerBuilder {
+  constructor() {
+    this.processor = null;
+    this.RAM = null;
+    this.hardDrive = null;
+    this.graphicsCard = null;
+  }
 
-const task1 = TaskBuilder()
-  .setName("Mail1")
-  .setDescription("Create Emai1")
-  .setIsDone(false)
-  .build();
-console.log(task1);
-//or
-const task2Builder = TaskBuilder();
-task2Builder.setName("Mail2");
-task2Builder.setDescription("Create Emai2");
-task2Builder.setIsDone(true);
-const task2 = task2Builder.build();
-console.log(task2);
+  setProcessor(processorName) {
+    this.processor = processorName;
+    return this;
+  }
+
+  setRAM(RAMName) {
+    this.RAM = RAMName;
+    return this;
+  }
+
+  setHardDrive(hardDriveName) {
+    this.hardDrive = hardDriveName;
+    return this;
+  }
+
+  setGraphicsCard(graphicsCardName) {
+    this.graphicsCard = graphicsCardName;
+    return this;
+  }
+
+  build() {
+    return new Computer(
+      this.processor,
+      this.RAM,
+      this.hardDrive,
+      this.graphicsCard
+    );
+  }
+}
