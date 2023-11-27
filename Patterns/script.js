@@ -1,21 +1,42 @@
-let person = function (name, age, city) {
-  let state = {
-    name: name,
-    age: age,
-    city: city,
-  };
-  return Object.assign(state, behavior(state));
-};
-
-function behavior(state) {
+function Task(name, description, isDone) {
   return {
-    introduce: function () {
-      console.log(
-        `${state.name} says: My name is ${state.name}, I'm ${state.age} old and I'm from ${state.city}`
-      );
+    name: name,
+    description: description,
+    isDone: isDone,
+  };
+}
+
+function TaskBuilder() {
+  let name, description, isDone;
+  return {
+    setName: function (newName) {
+      name = newName;
+      return this;
+    },
+    setDescription: function (newDescription) {
+      description = newDescription;
+      return this;
+    },
+    setIsDone: function (newIsDone) {
+      isDone = newIsDone;
+      return this;
+    },
+    build: function () {
+      return new Task(name, description, isDone);
     },
   };
 }
 
-let person1 = person("Olek", 21, "Wro");
-person1.introduce();
+const task1 = TaskBuilder()
+  .setName("Mail1")
+  .setDescription("Create Emai1")
+  .setIsDone(false)
+  .build();
+console.log(task1);
+//or
+const task2Builder = TaskBuilder();
+task2Builder.setName("Mail2");
+task2Builder.setDescription("Create Emai2");
+task2Builder.setIsDone(true);
+const task2 = task2Builder.build();
+console.log(task2);
