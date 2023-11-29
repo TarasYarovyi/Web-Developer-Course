@@ -1,52 +1,38 @@
-class Computer {
-  constructor(processor, RAM, hardDrive, graphicsCard) {
-    this.processor = processor;
-    this.RAM = RAM;
-    this.hardDrive = hardDrive;
-    this.graphicsCard = graphicsCard;
-  }
-  describe() {
-    console.log(this.processor);
-    console.log(this.RAM);
-    console.log(this.hardDrive);
-    console.log(this.graphicsCard);
-  }
+function CreditRequest(data) {
+  this.data = data;
 }
 
-class ComputerBuilder {
-  constructor() {
-    this.processor = null;
-    this.RAM = null;
-    this.hardDrive = null;
-    this.graphicsCard = null;
-  }
+function CheckHistory(CreditRequest) {
+  this.check = function () {
+    if (CreditRequest.history === "Positive") {
+      return true;
+    }
 
-  setProcessor(processorName) {
-    this.processor = processorName;
-    return this;
-  }
-
-  setRAM(RAMName) {
-    this.RAM = RAMName;
-    return this;
-  }
-
-  setHardDrive(hardDriveName) {
-    this.hardDrive = hardDriveName;
-    return this;
-  }
-
-  setGraphicsCard(graphicsCardName) {
-    this.graphicsCard = graphicsCardName;
-    return this;
-  }
-
-  build() {
-    return new Computer(
-      this.processor,
-      this.RAM,
-      this.hardDrive,
-      this.graphicsCard
-    );
-  }
+    return false;
+  };
 }
+function CheckSalary(CreditRequest, amount) {
+  this.check = function () {
+    if (CreditRequest.salary > amount) {
+      return true;
+    }
+    return false;
+  };
+}
+
+CreditRequest.prototype.applyFor = function (amount) {
+  let result = "Aproved";
+  let history = new CheckHistory(this.data);
+  if (!history.check()) result = "Not Approved becouse of credit history";
+  let salary = new CheckSalary(this.data, amount);
+  if (!salary.check()) result = "Not Approved becouse of salary";
+  return result;
+};
+
+let request1 = new CreditRequest({
+  name: "Przemek",
+  salary: 10000,
+  history: "Positive",
+});
+let answer = request1.applyFor(9000);
+console.log(answer);
