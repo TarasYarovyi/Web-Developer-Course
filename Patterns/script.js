@@ -1,38 +1,25 @@
-function CreditRequest(data) {
-  this.data = data;
+class OldPaymentSystem {
+  makePayment(amount) {
+    return true;
+  }
 }
 
-function CheckHistory(CreditRequest) {
-  this.check = function () {
-    if (CreditRequest.history === "Positive") {
-      return true;
-    }
-
-    return false;
-  };
-}
-function CheckSalary(CreditRequest, amount) {
-  this.check = function () {
-    if (CreditRequest.salary > amount) {
-      return true;
-    }
-    return false;
-  };
+class NewPaymentGateway {
+  login(credentials) {}
+  setAmount(amount) {}
+  confirmPayment() {
+    return true;
+  }
 }
 
-CreditRequest.prototype.applyFor = function (amount) {
-  let result = "Aproved";
-  let history = new CheckHistory(this.data);
-  if (!history.check()) result = "Not Approved becouse of credit history";
-  let salary = new CheckSalary(this.data, amount);
-  if (!salary.check()) result = "Not Approved becouse of salary";
-  return result;
-};
+class PaymentAdapter {
+  constructor(credentials) {
+    this.paymentGateWay = new NewPaymentGateway();
+    this.paymentGateWay.login(credentials);
+  }
 
-let request1 = new CreditRequest({
-  name: "Przemek",
-  salary: 10000,
-  history: "Positive",
-});
-let answer = request1.applyFor(9000);
-console.log(answer);
+  makePayment(amount) {
+    this.paymentGateWay.setAmount(amount);
+    return this.paymentGateWay.confirmPayment();
+  }
+}
