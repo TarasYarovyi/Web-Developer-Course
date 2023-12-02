@@ -1,25 +1,24 @@
-class OldPaymentSystem {
-  makePayment(amount) {
-    return true;
+class Coffee {
+  cost() {
+    return 10;
   }
 }
 
-class NewPaymentGateway {
-  login(credentials) {}
-  setAmount(amount) {}
-  confirmPayment() {
-    return true;
-  }
+function addMilk(coffee) {
+  const originalCost = coffee.cost();
+  coffee.cost = function () {
+    return originalCost + 2;
+  };
 }
-
-class PaymentAdapter {
-  constructor(credentials) {
-    this.paymentGateWay = new NewPaymentGateway();
-    this.paymentGateWay.login(credentials);
-  }
-
-  makePayment(amount) {
-    this.paymentGateWay.setAmount(amount);
-    return this.paymentGateWay.confirmPayment();
-  }
+function addSugar(coffee) {
+  const originalCost = coffee.cost();
+  coffee.cost = function () {
+    return originalCost + 1;
+  };
+}
+function addWhippedCream(coffee) {
+  const originalCost = coffee.cost();
+  coffee.cost = function () {
+    return originalCost + 3;
+  };
 }
