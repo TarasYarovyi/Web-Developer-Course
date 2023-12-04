@@ -1,24 +1,44 @@
-class Customer {
-  constructor(name) {
-    this.name = name;
-  }
-  notify(product) {
-    console.log(`${this.name} dostał ofertę na ${product}`);
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
   }
 }
 
-class ProductStore {
+class BookCollection {
   constructor() {
-    this.observers = [];
+    this.collection = [];
   }
-  subscribe(observer) {
-    this.observers.push(observer);
+  addBook(book) {
+    this.collection.push(book);
   }
-  unsubscribe(observer) {
-    let index = this.observers.findIndex((el) => el === observer);
-    this.observers.splice(index, 1);
+  getIterator() {
+    return new BookIterator(this.collection);
   }
-  addNewProduct(product) {
-    this.observers.forEach((observer) => observer.notify(product));
+}
+
+class BookIterator {
+  constructor(bookCollection) {
+    this.index = 0;
+    this.bookCollection = bookCollection;
+  }
+  first() {
+    this.reset();
+    return this.next();
+  }
+
+  next() {
+    return this.bookCollection[this.index++];
+  }
+  hasNext() {
+    return this.index <= this.bookCollection.length;
+  }
+  reset() {
+    this.index = 0;
+  }
+  each(callback) {
+    for (let element of this.bookCollection) {
+      callback(element);
+    }
   }
 }
