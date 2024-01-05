@@ -19,15 +19,47 @@
       .carousel-item {
         background-size: cover;
       }
+      .ad1 {
+        background: url(https://unsplash.com/1600x300/?hotel) no-repeat center
+          center;
+      }
+      .ad2 {
+        background: url(https://unsplash.com/1600x300/?vacations) no-repeat
+          center center;
+      }
+      .ad3 {
+        background: url(https://unsplash.com/1600x300/?skyscraper) no-repeat
+          center center;
+      }
+      @media (max-width: 576px) {
+        .carousel-item {
+          min-height: 12rem;
+        }
+      }
+      @media (min-width: 576px) {
+        .carousel-item {
+          min-height: 17rem;
+        }
+      }
+      #newslatter-box {
+        background-size: cover;
+        background: url(https://unsplash.com/1600x300/?ibiza);
+      }
+      .form-box {
+        width: 20rem;
+      }
+      footer a {
+        color: #aaaaab;
+      }
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a href="#" class="navbar-brand">
           <img
             src="https://cdn.pixabay.com/photo/2016/08/25/07/30/orange-1618917_640.png"
-            alt="brand"
+            alt="logo"
             width="50"
           />
         </a>
@@ -43,45 +75,28 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#">Artykuły</a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#">Sklep</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#">Kontakt</a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
+          <form action="" class="d-flex">
             <input
-              class="form-control me-2"
               type="search"
-              placeholder="Search"
-              aria-label="Search"
+              class="form-control"
+              placeholder="Czego potrzebujesz?"
             />
-            <button class="btn btn-outline-success" type="submit">
-              Search
+            <button class="btn btn-outline-warning ms-1" type="submit">
+              Szukaj
             </button>
           </form>
         </div>
