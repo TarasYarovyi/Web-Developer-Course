@@ -20,12 +20,12 @@
         background-size: cover;
       }
       .ad1 {
-        background: url(https://source.unsplash.com/1600x300/?hotel) no-repeat
-          center center;
-      }
-      .ad2 {
         background: url(https://source.unsplash.com/1600x300/?vacations)
           no-repeat center center;
+      }
+      .ad2 {
+        background: url(https://source.unsplash.com/1600x300/?hotel) no-repeat
+          center center;
       }
       .ad3 {
         background: url(https://source.unsplash.com/1600x300/?skyscraper)
@@ -51,10 +51,13 @@
       footer a {
         color: #aaaaab;
       }
+      .carousel-caption {
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark mb-3">
       <div class="container-fluid">
         <a href="#" class="navbar-brand">
           <img
@@ -103,52 +106,73 @@
       </div>
     </nav>
     <div class="container">
-      <div id="topCarousel" data-bs-ride="carousel" class="mt-3 carousel slide">
+      <div
+        id="carouselAutoplaying"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
         <div class="carousel-indicators">
-          <li
-            data-bs-target="#topCarousel"
+          <button
+            type="button "
+            data-bs-target="#carouselAutoplaying"
             data-bs-slide-to="0"
             class="active"
-          ></li>
-          <li data-bs-target="#topCarousel" data-bs-slide-to="1"></li>
-          <li data-bs-target="#topCarousel" data-bs-slide-to="2"></li>
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselAutoplaying"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselAutoplaying"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item rounded ad1 active" data-bs-interval="2000">
+          <div class="carousel-item rounded ad1 active">
             <div class="carousel-caption text-light">
-              <h3>Gdzie wyjechać na wakacje?</h3>
+              <h4>Gdzie wyjechać na wakacje?</h4>
+              <p>Wybierz kierunek</p>
+              <div class="data-caption d-none d-sm-block">19 maj 2023</div>
             </div>
           </div>
-          <div class="carousel-item rounded ad2" data-bs-interval="2000">
+          <div class="carousel-item rounded ad2">
             <div class="carousel-caption text-light">
               <h4>Jak zaplanować podróż?</h4>
               <p>Miejsce, bilety, koszty</p>
-              <div class="data-caption">19 luty</div>
+              <div class="data-caption d-none d-sm-block">23 czerwiec 2023</div>
             </div>
           </div>
-          <div class="carousel-item rounded ad3" data-bs-interval="2000">
+          <div class="carousel-item rounded ad3">
             <div class="carousel-caption text-light">
               <h4>Życie w mieście</h4>
               <p>Plusy oraz minusy</p>
-              <div class="data-caption d-none d-sm-block">19 maj</div>
+              <div class="data-caption d-none d-sm-block">15 sierpień 2023</div>
             </div>
           </div>
         </div>
         <button
-          type="button"
           class="carousel-control-prev"
-          data-bs-target="#topCarousel"
-          data-bs-slide-to="prev"
+          type="button"
+          data-bs-target="#carouselAutoplaying"
+          data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon"></span>
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
         </button>
         <button
-          type="button"
           class="carousel-control-next"
-          data-bs-target="#topCarousel"
-          data-bs-slide-to="next"
+          type="button"
+          data-bs-target="#carouselAutoplaying"
+          data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon"></span>
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
         </button>
       </div>
     </div>
@@ -206,77 +230,119 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-8 mt-5 mb-5">
+          <div class="mt-5 mb-5">
             <div class="blog-post">
               <img
                 src="https://source.unsplash.com/725x480/?sunset"
                 alt="sunset"
-                class="rounded float-end w-50 ms-4 mb-4"
+                class="rounded float-end w-50 m-3"
               />
               <h2 class="blog-post-title">Pierwszy post</h2>
               <p class="blog-post-date">10 Stycznia <a href="#">Adam</a></p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                in labore aperiam veritatis eaque mollitia et explicabo vel
-                repellat iusto.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                iste consequatur totam? Maxime doloribus soluta doloremque, illo
+                cupiditate exercitationem corporis nemo voluptatem. Dolore
+                libero explicabo itaque accusamus reprehenderit, exercitationem
+                asperiores in sed eligendi deleniti esse quisquam aliquid optio
+                corrupti eaque similique. Amet ducimus debitis, voluptatem enim
+                soluta molestiae odit dignissimos facere. Rerum reiciendis
+                quaerat laborum quos quasi aliquid. Velit asperiores molestias
+                cum optio maiores voluptatum ex maxime! Quaerat laboriosam
+                quibusdam repellendus quos, blanditiis repellat aspernatur
+                commodi voluptate nemo laudantium distinctio eaque, facilis
+                voluptas laborum corrupti quis aperiam dolorem ratione.
+                Assumenda fugiat officiis iure. Harum, veritatis. Necessitatibus
+                libero aut quae sed.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                in labore aperiam veritatis eaque mollitia et explicabo vel
-                repellat iusto.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
+                vero qui sequi consectetur, architecto nemo porro excepturi
+                quaerat ipsa? Velit et natus dolorem soluta ipsam voluptatem
+                cumque id quaerat sequi tempore, laudantium incidunt eveniet
+                commodi est nostrum labore! Quae, atque! Iure officiis esse
+                saepe expedita dolor ex earum debitis ullam.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                in labore aperiam veritatis eaque mollitia et explicabo vel
-                repellat iusto.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dolore, fugit laboriosam? Quo repellendus dolorum adipisci
+                blanditiis facilis at corporis amet!
               </p>
             </div>
             <div class="blog-post">
               <img
                 src="https://source.unsplash.com/725x480/?dominicana"
                 alt="sunset"
-                class="rounded float-end w-50 ms-4 mb-4"
+                class="rounded float-end w-50 m-3"
               />
               <h2 class="blog-post-title">Drugi post</h2>
               <p class="blog-post-date">14 Stycznia <a href="#">Adam</a></p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                in labore aperiam veritatis eaque mollitia et explicabo vel
-                repellat iusto.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                iste consequatur totam? Maxime doloribus soluta doloremque, illo
+                cupiditate exercitationem corporis nemo voluptatem. Dolore
+                libero explicabo itaque accusamus reprehenderit, exercitationem
+                asperiores in sed eligendi deleniti esse quisquam aliquid optio
+                corrupti eaque similique. Amet ducimus debitis, voluptatem enim
+                soluta molestiae odit dignissimos facere. Rerum reiciendis
+                quaerat laborum quos quasi aliquid. Velit asperiores molestias
+                cum optio maiores voluptatum ex maxime! Quaerat laboriosam
+                quibusdam repellendus quos, blanditiis repellat aspernatur
+                commodi voluptate nemo laudantium distinctio eaque, facilis
+                voluptas laborum corrupti quis aperiam dolorem ratione.
+                Assumenda fugiat officiis iure. Harum, veritatis. Necessitatibus
+                libero aut quae sed.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                in labore aperiam veritatis eaque mollitia et explicabo vel
-                repellat iusto.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
+                vero qui sequi consectetur, architecto nemo porro excepturi
+                quaerat ipsa? Velit et natus dolorem soluta ipsam voluptatem
+                cumque id quaerat sequi tempore, laudantium incidunt eveniet
+                commodi est nostrum labore! Quae, atque! Iure officiis esse
+                saepe expedita dolor ex earum debitis ullam.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                in labore aperiam veritatis eaque mollitia et explicabo vel
-                repellat iusto.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dolore, fugit laboriosam? Quo repellendus dolorum adipisci
+                blanditiis facilis at corporis amet!
               </p>
             </div>
             <div class="blog-post">
               <img
                 src="https://source.unsplash.com/725x480/?france"
                 alt="sunset"
-                class="rounded float-end w-50 ms-4 mb-4"
+                class="rounded float-end w-50 m-3"
               />
               <h2 class="blog-post-title">Trzeci post</h2>
               <p class="blog-post-date">23 Stycznia <a href="#">Adam</a></p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                in labore aperiam veritatis eaque mollitia et explicabo vel
-                repellat iusto.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                iste consequatur totam? Maxime doloribus soluta doloremque, illo
+                cupiditate exercitationem corporis nemo voluptatem. Dolore
+                libero explicabo itaque accusamus reprehenderit, exercitationem
+                asperiores in sed eligendi deleniti esse quisquam aliquid optio
+                corrupti eaque similique. Amet ducimus debitis, voluptatem enim
+                soluta molestiae odit dignissimos facere. Rerum reiciendis
+                quaerat laborum quos quasi aliquid. Velit asperiores molestias
+                cum optio maiores voluptatum ex maxime! Quaerat laboriosam
+                quibusdam repellendus quos, blanditiis repellat aspernatur
+                commodi voluptate nemo laudantium distinctio eaque, facilis
+                voluptas laborum corrupti quis aperiam dolorem ratione.
+                Assumenda fugiat officiis iure. Harum, veritatis. Necessitatibus
+                libero aut quae sed.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                in labore aperiam veritatis eaque mollitia et explicabo vel
-                repellat iusto.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
+                vero qui sequi consectetur, architecto nemo porro excepturi
+                quaerat ipsa? Velit et natus dolorem soluta ipsam voluptatem
+                cumque id quaerat sequi tempore, laudantium incidunt eveniet
+                commodi est nostrum labore! Quae, atque! Iure officiis esse
+                saepe expedita dolor ex earum debitis ullam.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                in labore aperiam veritatis eaque mollitia et explicabo vel
-                repellat iusto.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dolore, fugit laboriosam? Quo repellendus dolorum adipisci
+                blanditiis facilis at corporis amet!
               </p>
             </div>
           </div>
