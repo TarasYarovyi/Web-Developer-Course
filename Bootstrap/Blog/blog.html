@@ -44,6 +44,7 @@
       #newslatter-box {
         background-size: cover;
         background: url(https://source.unsplash.com/1600x300/?ibiza);
+        text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
       }
       .form-box {
         width: 20rem;
@@ -230,7 +231,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="mt-5 mb-5">
+          <div class="col-md-8 mt-5 mb-5">
             <div class="blog-post">
               <img
                 src="https://source.unsplash.com/725x480/?sunset"
@@ -374,8 +375,175 @@
               </ul>
             </nav>
           </div>
+          <aside class="col-md-4 mt-5">
+            <div class="bg-dark-subtle mb-3 rounded">
+              <h4 class="font-italic mt-3 ps-3">O stronie</h4>
+              <p class="p-3">
+                Blog Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Magni doloribus cumque nulla id. Amet, delectus hic? Temporibus
+                et reiciendis ad!
+              </p>
+            </div>
+            <div class="p-3">
+              <h4 class="font-italic mt-3 ps-3">Archiwum</h4>
+              <ol class="list-unstyled">
+                <li>
+                  <a href="#">Grudzień</a>
+                </li>
+                <li>
+                  <a href="#">Listopad</a>
+                </li>
+                <li>
+                  <a href="#">Październik</a>
+                </li>
+                <li>
+                  <a href="#">Wrzesień</a>
+                </li>
+                <li>
+                  <a href="#">Sierpień</a>
+                </li>
+              </ol>
+            </div>
+            <div class="p-4">
+              <h4 class="font-italic mt-3 ps-3">Kategorie</h4>
+              <ol class="list-unstyled">
+                <li><a href="#">Podróże</a></li>
+                <li><a href="#">Kulinaria</a></li>
+                <li><a href="#">Samochody</a></li>
+                <li><a href="#">Programowanie</a></li>
+              </ol>
+            </div>
+          </aside>
+        </div>
+      </div>
+      <div id="newslatter-box" class="rounded p-4 mb-3 bg-dark-subtle">
+        <div class="d-flex justify-content-center align-content-center">
+          <div class="form-box">
+            <form action="" novalidate class="row g-3 needs-validation">
+              <div class="col-12">
+                <input
+                  type="text"
+                  placeholder="Wpisz email"
+                  class="form-control"
+                  required
+                  id="emailInput"
+                />
+                <div class="valid-feedback">Email prawidłowy</div>
+                <div class="invalid-feedback">Wymagany adres Email</div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    id="agreement"
+                    class="form-check-input"
+                    required
+                  />
+                  <label for="agreement" class="form-check-label">
+                    Zgadzam się z regulaminem
+                  </label>
+                  <div class="invalid-feedback">Wymagane zaznaczenie</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="w-100 btn btn-primary btn-block">
+                  Zapisz mnie na newsletter
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-sm-6">
+          <div
+            class="border rounded row g-0 overflow-hidden shadow-sm-position-relative"
+          >
+            <div class="col p-4 d-flex flex-column">
+              <strong class="mb-2 text-primary">Wyspy</strong>
+              <h3>Wycieczka</h3>
+              <div class="mb-1 text-muted">1 Grudzień</div>
+              <p class="card-text mb-auto">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi,
+                vero nesciunt voluptate eius atque iusto.
+              </p>
+              <a href="#" class="stretched-link">Czytaj więcej</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img
+                width="200"
+                height="250"
+                src="https://source.unsplash.com/320x480/?ukraine"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div
+            class="border rounded row g-0 overflow-hidden shadow-sm-position-relative"
+          >
+            <div class="col p-4 d-flex flex-column">
+              <strong class="mb-2 text-primary">Wyspy</strong>
+              <h3>Wycieczka</h3>
+              <div class="mb-1 text-muted">16 Grudzień</div>
+              <p class="card-text mb-auto">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi,
+                vero nesciunt voluptate eius atque iusto.
+              </p>
+              <a href="#" class="stretched-link">Czytaj więcej</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img
+                width="200"
+                height="250"
+                src="https://source.unsplash.com/320x480/?poland"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </main>
+    <footer id="footer" class="text-light bg-dark mt-3">
+      <div class="container pt-4">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <h5>Nazwa bloga</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+              nemo ullam, similique est dolor dolorem.
+            </p>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <h5>Szybkie linki</h5>
+            <ul>
+              <li><a href="#">O nas</a></li>
+              <li><a href="#">Artykuły</a></li>
+              <li><a href="#">Regulamin </a></li>
+              <li><a href="#">Kontakt </a></li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <h5>Kontakt</h5>
+            <p>
+              <a href="mailto:admin@example.com">admin@example.com</a>
+            </p>
+            <p>Piotrkowska 8</p>
+            <p>05-050</p>
+            <p>Wrocław</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            Copyright by Blog. All rights reserved
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
