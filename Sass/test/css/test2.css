@@ -1,5 +1,11 @@
 body {
-  background-color: red; }
+  /*!zmienna globalna*/
+  /*!zmienna globalna*/
+  background-color: red;
+  border: 1px solid green;
+  font-family: Arial, Tahoma, sans-serif; }
 
 div {
-  border: solid red; }
+  font-family: Arial, Tahoma, sans-serif;
+  border: solid green;
+  border-top: 2px dotted red; }

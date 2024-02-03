@@ -1,7 +1,17 @@
-$color: red;
+$color: green;// zmienna globalna
+$fontFamily: Arial, Tahoma, sans-serif;
 body{
-    background-color: $color;
+    
+
+    $newGlobalColor: red !global;/*!zmienna globalna*/
+    $newLocalColor: green !global;/*!zmienna globalna*/
+
+    background-color: $newGlobalColor;
+    border: 1px solid $newLocalColor;
+    font-family: $fontFamily;
 }
 div {
+    font-family: $fontFamily;
     border: solid $color;
+    border-top: 2px dotted $newGlobalColor;
 }
