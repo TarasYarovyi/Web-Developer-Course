@@ -1,17 +1,26 @@
-$color: green;// zmienna globalna
-$fontFamily: Arial, Tahoma, sans-serif;
-body{
-    
+$basic-color: red;
 
-    $newGlobalColor: red !global;/*!zmienna globalna*/
-    $newLocalColor: green !global;/*!zmienna globalna*/
+.grayscale {
+    background-color: grayscale($basic-color);
+}
 
-    background-color: $newGlobalColor;
-    border: 1px solid $newLocalColor;
-    font-family: $fontFamily;
+.desaturate {
+    background-color: desaturate($basic-color, 40%);
 }
-div {
-    font-family: $fontFamily;
-    border: solid $color;
-    border-top: 2px dotted $newGlobalColor;
+
+.saturate {
+    background-color: saturate($basic-color, 50%);
 }
+
+.lighten {
+    background-color: lighten($basic-color, 40%);
+}
+
+.darken {
+    background-color: darken($basic-color, 40%);
+}
+
+.mix {
+    background-color: mix($basic-color, green);
+}
+
