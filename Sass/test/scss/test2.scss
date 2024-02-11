@@ -1,26 +1,29 @@
-$basic-color: red;
 
-.grayscale {
-    background-color: grayscale($basic-color);
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-size: 0.3rem + 2rem / $i;
+        @if ($i == 1) {
+            color: red;
+        }
+    }
 }
 
-.desaturate {
-    background-color: desaturate($basic-color, 40%);
+$i: 6;
+@while ($i > 0) {
+    Display-#{$i} { 
+        font-size: 0.2rem + ($i * 0.3rem);
+    }
+
+    $i: $i - 1;
 }
 
-.saturate {
-    background-color: saturate($basic-color, 50%);
-}
 
-.lighten {
-    background-color: lighten($basic-color, 40%);
-}
+$icons: (danger: red, succes:green, warning:yellow, info:blue);
 
-.darken {
-    background-color: darken($basic-color, 40%);
-}
-
-.mix {
-    background-color: mix($basic-color, green);
+@each $name, $color in $icons {
+    .icon-#{$name} {
+        display: inline-block;
+        color: $color;
+    }
 }
 
