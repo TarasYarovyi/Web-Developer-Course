@@ -10,7 +10,9 @@ class Heading extends React.Component {
     return (
       <div>
         <nav>
-          <h2>{this.props.headerTitle}</h2>
+          <h2 style={{ color: "blue", backgroundColor: "silver" }}>
+            {this.props.headerTitle}
+          </h2>
           <ul className="navigation">
             <li>{this.state.link1}</li>
             <li>Blog</li>
