@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Footer from "./Components/footer/Footer";
 import Heading from "./Components/heading/Heading";
+import HeadingStyledComponent from "./Components/headingStyledComponents/HeadingStyledComponent";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const companyData = {
   email: "contact@example.com",
@@ -13,6 +14,7 @@ const companyData = {
 };
 root.render(
   <React.StrictMode>
+    <HeadingStyledComponent />
     <Heading headerTitle="Welcome on page" />
     <App />
     <Footer companyData={companyData} contactEmail="admin@example.com" />
