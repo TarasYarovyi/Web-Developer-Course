@@ -15,9 +15,13 @@ const companyData = {
 root.render(
   <React.StrictMode>
     <HeadingStyledComponent />
-    <Heading headerTitle="Welcome on page" />
+    <Heading headerTitle="Welcome on page" headerText="Repeat lesson" />
     <App />
-    <Footer companyData={companyData} contactEmail="admin@example.com" />
+    <Footer
+      companyData={companyData}
+      contactEmail="admin@example.com"
+      footerList="Repeat lesson "
+    />
   </React.StrictMode>
 );
 

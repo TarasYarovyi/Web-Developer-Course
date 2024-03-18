@@ -25,7 +25,8 @@ function Footer(props) {
         <ul>
           {items}
           <li>
-            Contact: {props.contactEmail},{props.companyData.city}
+            Contact: {props.contactEmail}, {props.companyData.city},
+            {props.footerList}
           </li>
           {elements2.map((value, index) => {
             return <li>{value}</li>;
