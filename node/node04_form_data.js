@@ -1,4 +1,4 @@
-var http = require("http");
+let http = require("http");
 const { parse } = require("querystring");
 const htmlForm = `
 <html>
